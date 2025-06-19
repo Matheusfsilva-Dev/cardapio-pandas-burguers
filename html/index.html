@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <title>Cardápio | Panda's Burguers</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/pandas-logo2.png" alt="Logo Panda's Burguers">
+        </div>
+        <h1>Trabalhamos em familia para servir a sua</h1>
+    </header>
+    <nav>
+        <a href="cart.html" class="cart-button">Carrinho</a>
+    </nav>
+    <main>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('lanches')">
+                <img src="../img/lanches/big-x-salada.jpg" alt="Ícone Lanches" class="category-icon">
+                Lanches
+            </h2>
+            <p class="category-description">Não importa o horário, toda hora é uma boa hora para provar nossos hambúrgueres.</p>
+            <div id="lanches" class="items" style="display: none;">
+                <img src="../img/lanche1.jpg" alt="Imagem Lanches" class="lanches-image" id="lanches-image">
+                <div class="item">
+                    <img src="../img/lanches/big-x-salada.jpg" alt="Lanche Big X-Salada">
+                    <div class="item-details">
+                        <h3>Big X-Salada</h3>
+                        <p>Hambúrguer, mussarela, alface, tomate, batata palha, ketchup e molho especial</p>
+                        <span class="price">R$ 16,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-bacon.jpg" alt="Lanche Big X-Bacon">
+                    <div class="item-details">
+                        <h3>Big X-Bacon</h3>
+                        <p>Hambúrguer, bacon, mussarela, alface, tomate, ketchup, batata palha, cheddar e molho especial</p>
+                        <span class="price">R$ 22,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-pandão.jpg" alt="Lanche Big X-Pandão">
+                    <div class="item-details">
+                        <h3>Big X-Pandão</h3>
+                        <p>Hambúrguer, bacon, ovo, calabresa, mussarela, alface, tomate, ketchup, batata palha, cheddar e molho especial</p>
+                        <span class="price">R$ 28,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-frangão.jpg" alt="Lanche Big X-Frangão">
+                    <div class="item-details">
+                        <h3>Big X-Frangão</h3>
+                        <p>Na baguete, frango desfiado, cheddar, alface, tomate, ketchup, milho, batata palha e molho especial</p>
+                        <span class="price">R$ 22,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-egg.jpg" alt="Lanche Big X-Egg">
+                    <div class="item-details">
+                        <h3>Big X-Egg</h3>
+                        <p>Hambúrguer, ovo, mussarela, alface, tomate, ketchup, batata palha e molho especial</p>
+                        <span class="price">R$ 18,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-calabresa.jpg" alt="Lanche Big X-Calabresa">
+                    <div class="item-details">
+                        <h3>Big X-Calabresa</h3>
+                        <p>Na baguete, calabresa, mussarela, alface, tomate, ketchup, batata palha e molho especial</p>
+                        <span class="price">R$ 22,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-baconbresa.jpg" alt="Lanche Big X-Baconbresa">
+                    <div class="item-details">
+                        <h3>Big X-Baconbresa</h3>
+                        <p>Na baguete, bacon, calabresa, mussarela, alface, tomate, ketchup, batata palha e molho especial</p>
+                        <span class="price">R$ 22,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-carne-seca.jpg" alt="Lanche Big X-Carne Seca">
+                    <div class="item-details">
+                        <h3>Big X-Carne Seca</h3>
+                        <p>No baguete, carne seca desfiada, mussarela, alface, tomate, batata palha e molho especial</p>
+                        <span class="price">R$ 30,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-churrasco-barbecue.jpg" alt="Lanche Big X-Churrasco Barbecue">
+                    <div class="item-details">
+                        <h3>Big X-Churrasco Barbecue</h3>
+                        <p>Na baguete, contra filé, vinagrete, mussarela, barbecue, batata palha e molho especial</p>
+                        <span class="price">R$ 30,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-pernil.jpg" alt="Lanche Big X-Pernil">
+                    <div class="item-details">
+                        <h3>Big X-Pernil</h3>
+                        <p>Na baguete, Pernil desfiado , vinagrete, mussarela, batata palha e molho especial.</p>
+                        <span class="price">R$ 25,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-burger.jpg" alt="Lanche Big X-Burguer">
+                    <div class="item-details">
+                        <h3>Big X-Burguer</h3>
+                        <p>Pão, hambúrguer e duas fatias de mussarela</p>
+                        <span class="price">R$ 14,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/prensadão-do-pandas.jpg" alt="Lanche Prensadão do Pandas">
+                    <div class="item-details">
+                        <h3>Prensadão do Pandas</h3>
+                        <p>Pão, 2 salsichas, 2 fatias de mussarela, milho, purê, ketchup, mostarda, cheddar e batata palha.</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/lanches/big-x-costela.jpg" alt="Lanche Big X-Costela">
+                    <div class="item-details">
+                        <h3>Big X-Costela</h3>
+                        <p>Baguete com parmesão, costela desfiada, vinagrete, maionese defumada, com muita mussarela</p>
+                        <span class="price">R$ 28,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('combos')">
+                <img src="../img/combos.png" alt="Ícone Combos" class="category-icon">
+                Combos
+            </h2>
+            <p class="category-description">Quando você provar não vai mais querer parar de comer!</p>
+            <div id="combos" class="items" style="display: none;">
+                <img src="img/combo1.jpg" alt="Imagem Combos" class="lanches-image" id="combos-image">
+                <div class="item">
+                    <img src="img/combo1.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°1.Big X-Carne seca</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 42,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo2.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°2.Big X-Pandão</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 40,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo3.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°3.Big X-Salada</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 30,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo4.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°4.Big X-Frangão</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo5.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°5.Big X-Bacon</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo6.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°6.Big X-Calabresa</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo7.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°7.Big X-Egg</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 32,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo8.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°8.Big X-Baconbresa</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo9.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°9.Big X-Churrasco Barbecue</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 42,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo10.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°10.Big X-Pernil</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 40,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo11.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°11.Prensadão do Pandas</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 32,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo12.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°12.Big X-Costela</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 42,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo13.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°13.Big X-Burguer</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 28,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/combo14.jpg" alt="Combo Panda Clássico">
+                    <div class="item-details">
+                        <h3>N°14.Duplo Cheddar Burguer</h3>
+                        <p>+ Batata Média + Refrigerante guaraná 269ML</p>
+                        <span class="price">R$ 32,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('porcoes')">
+                <img src="../img/porções.jpg" alt="Ícone Porções" class="category-icon">
+                Porções
+            </h2>
+            <p class="category-description">Sabe quando dá aquela vontadde de comer um bom petisco. Nós podemos te ajudar a matar essa vontade.</p>
+            <div id="porcoes" class="items" style="display: none;">
+                <img src="img/porcao1.jpg" alt="Imagem Porções" class="lanches-image" id="porcoes-image">
+                <div class="item">
+                    <img src="img/porcao1.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Batata frita</h3>
+                        <p>Fritas crocantes com tempero especial</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao2.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Batata frita cheddar e bacon</h3>
+                        <p>Fritas crocantes com tempero especial + cheddar e bacon</p>
+                        <span class="price">R$ 40,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao3.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Caalabresa acebolada</h3>
+                        <p>Acompanha pão e vinagre</p>
+                        <span class="price">R$ 45,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao4.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Frango a passarinho</h3>
+                        <p>Acompanha alho frito, limão e molho especial</p>
+                        <span class="price">R$ 38,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao5.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Contra filé (Aperitivo)</h3>
+                        <p>Acompanha pão e vinagrete</p>
+                        <span class="price">R$ 60,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao6.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Aneis e cebola</h3>
+                        <p>Porção de Aneis de cebola</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao7.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Carne seca com mandioca cremosa</h3>
+                        <p>Acompanha pão</p>
+                        <span class="price">R$ 60,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao8.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Mandioca cremosa</h3>
+                        <p>Acompanha molho especial</p>
+                        <span class="price">R$ 30,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao9.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Bolinho de carne seca</h3>
+                        <p>14 unidades de bolinho acompanha molho especial</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao10.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Bolinho de Bacahau</h3>
+                        <p>Fritas crocantes com tempero especial</p>
+                        <span class="price">R$ 35,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao11.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Iscas de peixe</h3>
+                        <p>Acompanha molho especial e limão</p>
+                        <span class="price">R$ 60,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao12.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Batata média c/ cheddar e bacon</h3>
+                        <p>Fritas crocantes com tempero especial + cheddar e bacon</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao13.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Batata média</h3>
+                        <p>Fritas crocantes com tempero especial</p>
+                        <span class="price">R$ 13,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/porcao14.jpg" alt="Porção de Fritas">
+                    <div class="item-details">
+                        <h3>Peixe porquinho frito</h3>
+                        <p>Acompanha limão e molho especial</p>
+                        <span class="price">R$ 60,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('acai')">
+                <img src="../img/açaí.png" alt="Ícone Açaí" class="category-icon">
+                Açaí
+            </h2>
+            <p class="category-description">AEstá feliz? Compra açaí para comemorar. Mas se está triste, compre açaí para ficar feliz!</p>
+            <div id="acai" class="items" style="display: none;">
+                <img src="img/acai1.jpg" alt="Imagem Açaí" class="lanches-image" id="acai-image">
+                <div class="item">
+                    <img src="img/acai1.jpg" alt="Açaí Tradicional">
+                    <div class="item-details">
+                        <h3>Açaí Pequeno</h3>
+                        <p>250ml acompanha banana e granola</p>
+                        <span class="price">R$ 15,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/acai1.jpg" alt="Açaí Tradicional">
+                    <div class="item-details">
+                        <h3>Açaí médio</h3>
+                        <p>500ml acompanha banana e granola</p>
+                        <span class="price">R$ 22,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/acai1.jpg" alt="Açaí Tradicional">
+                    <div class="item-details">
+                        <h3>Açaí grande</h3>
+                        <p>750ml acompanha banana e granola</p>
+                        <span class="price">R$ 30,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('caldos')">
+                <img src="../img/caldos.png" alt="Ícone Caldos" class="category-icon">
+                Caldos
+            </h2>
+            <p class="category-description">Você não pode comprar a felicidade, mas pode comprar nossos caldos que é quase a mesma coisa!</p>
+            <div id="caldos" class="items" style="display: none;">
+                <img src="img/caldo1.jpg" alt="Imagem Caldos" class="lanches-image" id="caldos-image">
+                <div class="item">
+                    <img src="img/caldo1.jpg" alt="Caldo de Mocotó">
+                    <div class="item-details">
+                        <h3>Caldo de Mocotó</h3>
+                        <p>Caldo caseiro com mocotó e temperos especiais <br>Acompanha Torrada</p>
+                        <span class="price">R$ 16,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('pasteis')">
+                <img src="../img/pasteis.png" alt="Ícone Pastéis" class="category-icon">
+                Pastéis
+            </h2>
+            <p class="category-description">Tem dias que tudo o que a gente precisa ouvir é: Vamos comer um pastel?</p>
+            <div id="pasteis" class="items" style="display: none;">
+                <img src="img/pastel1.jpg" alt="Imagem Pastéis" class="lanches-image" id="pasteis-image">
+                <div class="item">
+                    <img src="img/pastel1.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Carne</h3>
+                        <p>Pastel recheado com carne moída temperada</p>
+                        <span class="price">R$ 17,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel2.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Carne com queijo</h3>
+                        <p>Pastel recheado com carne moída temperada e queijo</p>
+                        <span class="price">R$ 17,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel3.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Frango com requeijão</h3>
+                        <p>Pastel recheado com frango temperado e requeijão</p>
+                        <span class="price">R$ 17,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel4.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de quejo</h3>
+                        <p>Pastel recheado com queijo</p>
+                        <span class="price">R$ 17,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel5.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Carne seca com requeijão</h3>
+                        <p>ástel recheado com carne seca e requeijão</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel6.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Carne seca com queijo</h3>
+                        <p>Pastel recheado com carne seca e queijo</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel7.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de costela com requeijão</h3>
+                        <p>Pastel recheado com costela bovina e requeijão</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel8.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de costela com queijo</h3>
+                        <p>Pastel recheado com costela e queijo</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel9.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel de Frango com queijo</h3>
+                        <p>Pastel recheado com frango e queijo</p>
+                        <span class="price">R$ 17,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/pastel10.jpg" alt="Pastel de Carne">
+                    <div class="item-details">
+                        <h3>Pastel Romeu e julieta</h3>
+                        <p>Pastel recheado com queijo e goiabada</p>
+                        <span class="price">R$ 20,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('bebidas')">
+                <img src="../img/bebidas.png" alt="Ícone Bebidas" class="category-icon">
+                Bebidas
+            </h2>
+            <p class="category-description">Para acompanhar o seu pedido, as melhores bebidas.</p>
+            <div id="bebidas" class="items" style="display: none;">
+                <img src="img/bebida1.jpg" alt="Imagem Bebidas" class="lanches-image" id="bebidas-image">
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Agua</h3>
+                        <p>Água mineral sem gas</p>
+                        <span class="price">R$ 3,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Cerveja Original 269ML</h3>
+                        <p>Cerveja Original Latinha</p>
+                        <span class="price">R$ 5,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Cerveja Skol 269ML</h3>
+                        <p>Cerveja Skol Latinha</p>
+                        <span class="price">R$ 5,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Chop 1LT</h3>
+                        <p>Chop de 1LT</p>
+                        <span class="price">R$ 24,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Chop vinho 1LT</h3>
+                        <p>Chop vinho de 1LT</p>
+                        <span class="price">R$ 28,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Coca-Cola Zero 350ml</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Coca-Cola Zero 600ml</h3>
+                        <p>Refrigerante garrafa</p>
+                        <span class="price">R$ 8,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Coca-Cola 350ml</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Dollynho (guarana)</h3>
+                        <p>Refrigerante garrafa</p>
+                        <span class="price">R$ 4,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Guaraná 350ml</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Pepsi 350ml</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Coca-Cola 600ml</h3>
+                        <p>Refrigerante garrafa</p>
+                        <span class="price">R$ 8,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Guaraná 600ml</h3>
+                        <p>Refrigerante garrafa</p>
+                        <span class="price">R$ 8,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Soda 350ml</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Suco Del Valle laranja</h3>
+                        <p>Suco Del Valle</p>
+                        <span class="price">R$ 7,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Suco Del Valle uva</h3>
+                        <p>Suco Del Valle</p>
+                        <span class="price">R$ 7,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Sukita laranja 350ML</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/bebida1.jpg" alt="Refrigerante 350ml">
+                    <div class="item-details">
+                        <h3>Sukita uva 350ML</h3>
+                        <p>Refrigerante lata</p>
+                        <span class="price">R$ 6,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2 class="category-title" onclick="toggleCategory('sobremesas')">
+                <img src="../img/sobremesas.png" alt="Ícone Sobremesas" class="category-icon">
+                Sobremesas
+            </h2>
+            <p class="category-description">Não deixe para amanha a sobremesa que você pode comer hoje</p>
+            <div id="sobremesas" class="items" style="display: none;">
+                <img src="img/sobremesa1.jpg" alt="Imagem Sobremesas" class="lanches-image" id="sobremesas-image">
+                <div class="item">
+                    <img src="img/sobremesa1.jpg" alt="Brigadeiro">
+                    <div class="item-details">
+                        <h3>Mini churros (12 unidades)</h3>
+                        <p>12 unidades de mini churros</p>
+                        <span class="price">R$ 15,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/sobremesa2.jpg" alt="Brigadeiro">
+                    <div class="item-details">
+                        <h3>Mini churros (8 unidades)</h3>
+                        <p>8 unidades de mini churros</p>
+                        <span class="price">R$ 12,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/sobremesa2.jpg" alt="Brigadeiro">
+                    <div class="item-details">
+                        <h3>Petit gateau</h3>
+                        <p>Petit gateau</p>
+                        <span class="price">R$ 16,00</span>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contato</h3>
+                <p>Endereço: R Ceresopolis, 6 - Jardim Olinda - São Paulo / SP</p>
+                <p>Telefone: (11) 93148-7002</p>
+                <p>WhatsApp: (11) 93148-7002</p>
+                <p>Instagram: @pandasburguers</p>
+                <p>Facebook: Panda's Burguers</p>
+            </div>
+            <div class="creator-info">
+                <h3>Criador do site</h3>
+                <p>Instagram: @matheus_ferreir_</p>
+                <p>LinkedIn: @Matheus Interaminense</p>
+                <p>GitHub: @Matheusfsilva-Dev</p>
+                <p>WhatsApp: (11) 94840-5354</p>
+            </div>
+        </div>
+        <img src="../img/pandas-logo2.png" alt="Panda's Burguers Logo" class="footer-logo">
+        <p class="copyright">© 2025 Panda's Burguers. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleCategory(categoryId) {
+            const category = document.getElementById(categoryId);
+            const image = document.getElementById(categoryId + '-image');
+            if (category.style.display === "none" || category.style.display === "") {
+                category.style.display = "block";
+                image.style.display = "none";
+            } else {
+                category.style.display = "none";
+                image.style.display = "block";
+            }
+        }
+    </script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados de Entrega - Panda's Burguers</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/pandas-logo2.png" alt="Panda's Burguers Logo">
+        </div>
+        <h1>Cardápio</h1>
+    </header>
+
+    <nav>
+        <a href="index.html" class="back-button">Voltar ao Cardápio</a>
+    </nav>
+
+    <main>
+        <section class="category">
+            <h2 class="category-title">Resumo do Pedido</h2>
+            <div id="order-items" class="items"></div>
+            <p id="order-subtotal" class="price">Subtotal: R$ 0,00</p>
+            <p id="delivery-fee" class="price">Taxa de Entrega: R$ 0,00</p>
+            <p id="order-total" class="price">Total: R$ 0,00</p>
+        </section>
+        <section class="category">
+            <h2 class="category-title">Dados de Entrega</h2>
+            <div class="delivery-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" required>
+                <label for="complement">Complemento:</label>
+                <input type="text" id="complement">
+                <label for="phone">Número de Telefone:</label>
+                <div class="phone-input">
+                    <select id="ddd" required>
+                        <option value="">DDD</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="24">24</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="51">51</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="61">61</option>
+                        <option value="62">62</option>
+                        <option value="63">63</option>
+                        <option value="64">64</option>
+                        <option value="65">65</option>
+                        <option value="66">66</option>
+                        <option value="67">67</option>
+                        <option value="68">68</option>
+                        <option value="69">69</option>
+                        <option value="71">71</option>
+                        <option value="73">73</option>
+                        <option value="74">74</option>
+                        <option value="75">75</option>
+                        <option value="77">77</option>
+                        <option value="79">79</option>
+                        <option value="81">81</option>
+                        <option value="82">82</option>
+                        <option value="83">83</option>
+                        <option value="84">84</option>
+                        <option value="85">85</option>
+                        <option value="86">86</option>
+                        <option value="87">87</option>
+                        <option value="88">88</option>
+                        <option value="89">89</option>
+                        <option value="91">91</option>
+                        <option value="92">92</option>
+                        <option value="93">93</option>
+                        <option value="94">94</option>
+                        <option value="95">95</option>
+                        <option value="96">96</option>
+                        <option value="97">97</option>
+                        <option value="98">98</option>
+                        <option value="99">99</option>
+                    </select>
+                    <input type="text" id="phone" placeholder="Número de telefone" required>
+                </div>
+                <label for="reference">Pto Referência:</label>
+                <input type="text" id="reference">
+                <label for="payment">Forma de Pagamento:</label>
+                <select id="payment" onchange="toggleChangeField()" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <div id="change-field" class="change-field" style="display: none;">
+                    <label for="change">Troco para:</label>
+                    <input type="text" id="change" placeholder="Ex.: R$ 50,00">
+                </div>
+                <label for="observations">Observações:</label>
+                <textarea id="observations"></textarea>
+                <button id="submit-order" class="submit-button">Clique aqui para enviar seu pedido</button>
+                <p id="confirmation-message" class="confirmation-message"></p>
+                <div id="pix-modal" class="pix-modal" style="display: none;">
+                    <div class="pix-modal-content">
+                        <h3>Dados para Pagamento via Pix</h3>
+                        <p><strong>Chave Pix:</strong> (11) 93148-7002</p>
+                        <p><strong>Nome:</strong> Panda's Burguers</p>
+                        <p><strong>Banco:</strong> Banco Exemplo</p>
+                        <p>Para liberação de seu pedido envie o comprovante do Pix.</p>
+                        <button id="pix-ok-button" class="submit-button">OK</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contato</h3>
+                <p>Endereço: R Ceresopolis, 6 - Jardim Olinda - São Paulo / SP</p>
+                <p>Telefone: (11) 93148-7002</p>
+                <p>WhatsApp: (11) 93148-7002</p>
+                <p>Instagram: @pandasburguers</p>
+                <p>Facebook: Panda's Burguers</p>
+            </div>
+            <div class="creator-info">
+                <h3>Criador do site</h3>
+                <p>Instagram: @matheus_ferreir_</p>
+                <p>LinkedIn: @Matheus Interaminense</p>
+                <p>GitHub: @Matheusfsilva-Dev</p>
+                <p>WhatsApp: (11) 94840-5354</p>
+            </div>
+        </div>
+        <img src="../img/pandas-logo2.png" alt="Panda's Burguers Logo" class="footer-logo">
+        <p class="copyright">© 2025 Panda's Burguers. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateOrderSummary();
+            document.getElementById('submit-order').addEventListener('click', submitOrder);
+        });
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.getElementById('order-items');
+            const orderSubtotal = document.getElementById('order-subtotal');
+            const deliveryFee = document.getElementById('delivery-fee');
+            const orderTotal = document.getElementById('order-total');
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const deliveryDetails = JSON.parse(localStorage.getItem('deliveryDetails') || '{}');
+
+            orderItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                orderItemsContainer.innerHTML = '<p>Seu pedido está vazio.</p>';
+                orderSubtotal.textContent = 'Subtotal: R$ 0,00';
+                deliveryFee.textContent = 'Taxa de Entrega: R$ 0,00';
+                orderTotal.textContent = 'Total: R$ 0,00';
+                return;
+            }
+
+            let subtotal = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'item';
+                const extrasText = item.extras && item.extras.length > 0 ? `<p>Extras: ${item.extras.join(', ')}</p>` : '';
+                itemElement.innerHTML = `
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        ${extrasText}
+                        <p class="price">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                    </div>
+                `;
+                orderItemsContainer.appendChild(itemElement);
+                subtotal += item.price;
+            });
+
+            orderSubtotal.textContent = `Subtotal: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            deliveryFee.textContent = `Taxa de Entrega: R$ ${deliveryDetails.fee ? deliveryDetails.fee.toFixed(2).replace('.', ',') : '0,00'}`;
+            orderTotal.textContent = `Total: R$ ${deliveryDetails.total ? deliveryDetails.total.toFixed(2).replace('.', ',') : subtotal.toFixed(2).replace('.', ',')}`;
+        }
+
+        function toggleChangeField() {
+            const payment = document.getElementById('payment').value;
+            const changeField = document.getElementById('change-field');
+            changeField.style.display = payment === 'Dinheiro' ? 'block' : 'none';
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const complement = document.getElementById('complement').value;
+            const ddd = document.getElementById('ddd').value;
+            const phone = document.getElementById('phone').value;
+            const reference = document.getElementById('reference').value;
+            const payment = document.getElementById('payment').value;
+            const change = document.getElementById('change').value;
+            const observations = document.getElementById('observations').value;
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const deliveryDetails = JSON.parse(localStorage.getItem('deliveryDetails') || '{}');
+
+            if (!name || !address || !ddd || !phone || !payment) {
+                document.getElementById('confirmation-message').textContent = 'Por favor, preencha todos os campos obrigatórios.';
+                document.getElementById('confirmation-message').style.color = '#ff3333';
+                return;
+            }
+
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedDateTime = `${day}/${month}/${year} às ${hours}:${minutes}:${seconds}`;
+
+            let message = `Feito em ${formattedDateTime}\n\n`;
+            message += `Nome: ${name}\n`;
+            message += `Endereço: ${address}\n`;
+            message += `Complemento: ${complement || 'Nenhum'}\n`;
+            message += `Telefone: (${ddd}) ${phone}\n`;
+            message += `Bairro: ${deliveryDetails.neighborhood || 'Não especificado'}\n`;
+            message += `Pto Referência: ${reference || 'Nenhum'}\n`;
+            message += `Forma de Pgto: ${payment}${payment === 'Dinheiro' && change ? ', Troco Para: R$ ' + change : ''}\n`;
+            message += `Observações: ${observations || 'Nenhuma'}\n\n`;
+            message += `Pedido:\n`;
+            cart.forEach(item => {
+                const extras = item.extras && item.extras.length > 0 ? `Obs: ${item.extras.join(', ')}` : 'Obs: Nenhuma';
+                message += `01 - ${item.name}\n${extras}\n\n`;
+            });
+            message += `TOTAL= R$ ${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2).replace('.', ',')}\n`;
+            if (deliveryDetails.fee) {
+                message += `ENTREGA= R$ ${deliveryDetails.fee.toFixed(2).replace('.', ',')}\n`;
+            }
+            message += `\nTotal do Pedido: R$ ${deliveryDetails.total ? deliveryDetails.total.toFixed(2).replace('.', ',') : cart.reduce((sum, item) => sum + item.price, 0).toFixed(2).replace('.', ',')}`;
+
+            const sendToWhatsApp = () => {
+                document.getElementById('confirmation-message').textContent = 'Pedido enviado com sucesso! Você será redirecionado para o WhatsApp.';
+                document.getElementById('confirmation-message').style.color = '#ff6600';
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=5511948405354&text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            };
+
+            if (payment === 'Pix') {
+                const pixModal = document.getElementById('pix-modal');
+                pixModal.style.display = 'flex';
+                document.getElementById('pix-ok-button').onclick = () => {
+                    pixModal.style.display = 'none';
+                    sendToWhatsApp();
+                };
+            } else {
+                sendToWhatsApp();
+            }
+        }
+    </script>
+</body>
+</html>

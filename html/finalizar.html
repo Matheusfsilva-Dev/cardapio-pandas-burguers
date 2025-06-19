@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido - Panda's Burguers</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/pandas-logo2.png" alt="Panda's Burguers Logo">
+        </div>
+        <h1>Cardápio</h1>
+    </header>
+
+    <nav>
+        <a href="index.html" class="back-button">Voltar ao Cardápio</a>
+    </nav>
+
+    <main>
+        <section class="category">
+            <h2 class="category-title">Resumo do Pedido</h2>
+            <div id="order-items" class="items"></div>
+            <p id="order-subtotal" class="price">Subtotal: R$ 0,00</p>
+            <p id="delivery-fee" class="price" style="display: none;">Taxa de Entrega: R$ 0,00</p>
+            <p id="order-total" class="price">Total: R$ 0,00</p>
+        </section>
+        <section class="category">
+            <h2 class="category-title">Opções de Entrega</h2>
+            <div id="delivery-options" class="delivery-options">
+                <label class="delivery-option">
+                    <input type="radio" name="delivery" value="delivery" onchange="updateDeliveryInfo()">
+                    Quero receber em casa
+                </label>
+                <label class="delivery-option">
+                    <input type="radio" name="delivery" value="pickup" onchange="updateDeliveryInfo()">
+                    Vou retirar no local
+                </label>
+                <label class="delivery-option">
+                    <input type="radio" name="delivery" value="dine-in" onchange="updateDeliveryInfo()">
+                    Vou consumir na mesa
+                </label>
+            </div>
+            <div id="neighborhood-selection" class="neighborhood-selection" style="display: none;">
+                <label for="neighborhood">Selecione o bairro de entrega:</label>
+                <select id="neighborhood" onchange="updateDeliveryInfo()">
+                    <option value="">-- Selecione um bairro --</option>
+                    <option value="Chácara Nossa Senhora do Bom Conselho|5">Chácara Nossa Senhora do Bom Conselho - R$ 5,00</option>
+                    <option value="Consultar Bairro|3">Consultar Bairro - R$ 3,00</option>
+                    <option value="Horto do Ipê|7">Horto do Ipê - R$ 7,00</option>
+                    <option value="Inocoop|7">Inocoop - R$ 7,00</option>
+                    <option value="Jardim América|10">Jardim América - R$ 10,00</option>
+                    <option value="Jardim Ana Maria|3">Jardim Ana Maria - R$ 3,00</option>
+                    <option value="Jardim Capelinha|7">Jardim Capelinha - R$ 7,00</option>
+                    <option value="Jardim Catanduva|5">Jardim Catanduva - R$ 5,00</option>
+                    <option value="Jardim Das Palmas|7">Jardim Das Palmas - R$ 7,00</option>
+                    <option value="Jardim Faria Lima|5">Jardim Faria Lima - R$ 5,00</option>
+                    <option value="Jardim Germânia|10">Jardim Germânia - R$ 10,00</option>
+                    <option value="Jardim Helga|7">Jardim Helga - R$ 7,00</option>
+                    <option value="Jardim Henriqueta|7">Jardim Henriqueta - R$ 7,00</option>
+                    <option value="Jardim Ingá|5">Jardim Ingá - R$ 5,00</option>
+                    <option value="Jardim Iracema|10">Jardim Iracema - R$ 10,00</option>
+                    <option value="Jardim Leônidas Moreira|7">Jardim Leônidas Moreira - R$ 7,00</option>
+                    <option value="Jardim Maria Duarte|7">Jardim Maria Duarte - R$ 7,00</option>
+                    <option value="Jardim Maria Virgínia|5">Jardim Maria Virgínia - R$ 5,00</option>
+                    <option value="Jardim Martinica|5">Jardim Martinica - R$ 5,00</option>
+                    <option value="Jardim Novo Oriente|3">Jardim Novo Oriente - R$ 3,00</option>
+                    <option value="Jardim Olinda|3">Jardim Olinda - R$ 3,00</option>
+                    <option value="Jardim Paris|5">Jardim Paris - R$ 5,00</option>
+                    <option value="Jardim Piracuama|5">Jardim Piracuama - R$ 5,00</option>
+                    <option value="Jardim Pirajussara|7">Jardim Pirajussara - R$ 7,00</option>
+                    <option value="Jardim Record|10">Jardim Record - R$ 10,00</option>
+                    <option value="Jardim Samara|5">Jardim Samara - R$ 5,00</option>
+                    <option value="Jardim São Roque|7">Jardim São Roque - R$ 7,00</option>
+                    <option value="Jardim São Luís|10">Jardim São Luís - R$ 10,00</option>
+                    <option value="Jardim Umuarama|7">Jardim Umuarama - R$ 7,00</option>
+                    <option value="Jardim Vale das Virtudes|10">Jardim Vale das Virtudes - R$ 10,00</option>
+                    <option value="Morumbi Sul|5">Morumbi Sul - R$ 5,00</option>
+                    <option value="Parque Araribá|5">Parque Araribá - R$ 5,00</option>
+                    <option value="Parque Esmeralda|5">Parque Esmeralda - R$ 5,00</option>
+                    <option value="Parque Marabá|7">Parque Marabá - R$ 7,00</option>
+                    <option value="Parque Pinheiros|10">Parque Pinheiros - R$ 10,00</option>
+                    <option value="Parque Regina|3">Parque Regina - R$ 3,00</option>
+                    <option value="Parque Ype|5">Parque Ype - R$ 5,00</option>
+                    <option value="Rebouças|5">Rebouças - R$ 5,00</option>
+                    <option value="Santo Amaro|12">Santo Amaro - R$ 12,00</option>
+                    <option value="Umarizal|5">Umarizal - R$ 5,00</option>
+                    <option value="Vila Andrade|7">Vila Andrade - R$ 7,00</option>
+                    <option value="Vila das Belezas|7">Vila das Belezas - R$ 7,00</option>
+                    <option value="Vila Franca|5">Vila Franca - R$ 5,00</option>
+                    <option value="Vila Prel|7">Vila Prel - R$ 7,00</option>
+                </select>
+            </div>
+            <div id="delivery-info" class="delivery-info"></div>
+            <button id="confirm-order" class="confirm-button" disabled>Confirmar Pedido</button>
+            <p id="confirmation-message" class="confirmation-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contato</h3>
+                <p>Endereço: R Ceresopolis, 6 - Jardim Olinda - São Paulo / SP</p>
+                <p>Telefone: (11) 93148-7002</p>
+                <p>WhatsApp: (11) 93148-7002</p>
+                <p>Instagram: @pandasburguers</p>
+                <p>Facebook: Panda's Burguers</p>
+            </div>
+            <div class="creator-info">
+                <h3>Criador do site</h3>
+                <p>Instagram: @matheus_ferreir_</p>
+                <p>LinkedIn: @Matheus Interaminense</p>
+                <p>GitHub: @Matheusfsilva-Dev</p>
+                <p>WhatsApp: (11) 94840-5354</p>
+            </div>
+        </div>
+        <img src="../img/pandas-logo2.png" alt="Panda's Burguers Logo" class="footer-logo">
+        <p class="copyright">© 2025 Panda's Burguers. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeStyles();
+            updateOrderSummary();
+        });
+
+        function initializeStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .delivery-options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-bottom: 15px;
+                }
+                .delivery-option {
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    padding: 10px;
+                    cursor: pointer;
+                    font-size: 0.9em;
+                    color: #333;
+                }
+                .delivery-option input {
+                    margin-right: 10px;
+                }
+                .neighborhood-selection {
+                    margin: 15px 0;
+                    font-size: 0.9em;
+                    color: #333;
+                }
+                .neighborhood-selection select {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    font-size: 0.9em;
+                    color: #333;
+                }
+                .delivery-info {
+                    font-size: 0.9em;
+                    color: #666;
+                    margin-bottom: 15px;
+                }
+                .confirm-button {
+                    background-color: #ff6600;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-size: 0.9em;
+                    cursor: pointer;
+                }
+                .confirm-button:hover {
+                    background-color: #e65c00;
+                }
+                .confirm-button:disabled {
+                    background-color: #ccc;
+                    cursor: not-allowed;
+                }
+                .confirmation-message {
+                    font-size: 0.9em;
+                    color: #ff6600;
+                    margin-top: 10px;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.getElementById('order-items');
+            const orderSubtotal = document.getElementById('order-subtotal');
+            const deliveryFee = document.getElementById('delivery-fee');
+            const orderTotal = document.getElementById('order-total');
+            const confirmButton = document.getElementById('confirm-order');
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+            orderItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                orderItemsContainer.innerHTML = '<p>Seu pedido está vazio.</p>';
+                orderSubtotal.textContent = 'Subtotal: R$ 0,00';
+                deliveryFee.style.display = 'none';
+                orderTotal.textContent = 'Total: R$ 0,00';
+                confirmButton.disabled = true;
+                return;
+            }
+
+            let subtotal = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'item';
+                const extrasText = item.extras && item.extras.length > 0 ? `<p>Extras: ${item.extras.join(', ')}</p>` : '';
+                itemElement.innerHTML = `
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        ${extrasText}
+                        <p class="price">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                    </div>
+                `;
+                orderItemsContainer.appendChild(itemElement);
+                subtotal += item.price;
+            });
+
+            orderSubtotal.textContent = `Subtotal: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            updateDeliveryInfo();
+        }
+
+        function updateDeliveryInfo() {
+            const deliveryInfo = document.getElementById('delivery-info');
+            const confirmButton = document.getElementById('confirm-order');
+            const neighborhoodSelection = document.getElementById('neighborhood-selection');
+            const neighborhood = document.getElementById('neighborhood');
+            const deliveryFee = document.getElementById('delivery-fee');
+            const orderTotal = document.getElementById('order-total');
+            const selectedOption = document.querySelector('input[name="delivery"]:checked');
+            const subtotal = parseFloat(document.getElementById('order-subtotal').textContent.replace('Subtotal: R$', '').replace(',', '.'));
+
+            if (!selectedOption) {
+                deliveryInfo.innerHTML = '<p>Selecione uma opção de entrega.</p>';
+                neighborhoodSelection.style.display = 'none';
+                deliveryFee.style.display = 'none';
+                orderTotal.textContent = `Total: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                confirmButton.disabled = true;
+                return;
+            }
+
+            const option = selectedOption.value;
+            if (option === 'delivery') {
+                neighborhoodSelection.style.display = 'block';
+                deliveryInfo.innerHTML = `
+                    <p>Tempo estimado de entrega: 40 minutos</p>
+                    <p>Pedido mínimo (sem taxa de entrega): R$ 20,00</p>
+                    ${subtotal < 20 ? '<p style="color: #ff3333;">O pedido não atinge o valor mínimo de R$ 20,00 para entrega.</p>' : ''}
+                `;
+                const selectedNeighborhood = neighborhood.value;
+                let fee = 0;
+                if (selectedNeighborhood) {
+                    fee = parseFloat(selectedNeighborhood.split('|')[1]);
+                    deliveryFee.style.display = 'block';
+                    deliveryFee.textContent = `Taxa de Entrega: R$ ${fee.toFixed(2).replace('.', ',')}`;
+                } else {
+                    deliveryInfo.innerHTML += '<p style="color: #ff3333;">Selecione um bairro para entrega.</p>';
+                    deliveryFee.style.display = 'none';
+                    confirmButton.disabled = true;
+                }
+                orderTotal.textContent = `Total: R$ ${(subtotal + fee).toFixed(2).replace('.', ',')}`;
+                confirmButton.disabled = subtotal < 20 || !selectedNeighborhood;
+            } else {
+                neighborhoodSelection.style.display = 'none';
+                deliveryFee.style.display = 'none';
+                orderTotal.textContent = `Total: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                if (option === 'pickup' || option === 'dine-in') {
+                    deliveryInfo.innerHTML = '<p>Tempo estimado de espera: 30 minutos</p>';
+                    confirmButton.disabled = false;
+                }
+            }
+        }
+
+        function confirmOrder() {
+            const selectedOption = document.querySelector('input[name="delivery"]:checked').value;
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            if (selectedOption === 'delivery') {
+                const neighborhood = document.getElementById('neighborhood').value.split('|')[0];
+                const fee = parseFloat(document.getElementById('neighborhood').value.split('|')[1]);
+                localStorage.setItem('deliveryDetails', JSON.stringify({
+                    neighborhood: neighborhood,
+                    fee: fee,
+                    subtotal: subtotal,
+                    total: subtotal + fee
+                }));
+                window.location.href = 'dadosentrega.html';
+            } else if (selectedOption === 'pickup') {
+                localStorage.setItem('pickupDetails', JSON.stringify({
+                    subtotal: subtotal,
+                    total: subtotal
+                }));
+                window.location.href = 'dadoslocal.html';
+            } else if (selectedOption === 'dine-in') {
+                localStorage.setItem('dineInDetails', JSON.stringify({
+                    subtotal: subtotal,
+                    total: subtotal
+                }));
+                window.location.href = 'dadosmesa.html';
+            }
+        }
+
+        document.getElementById('confirm-order').addEventListener('click', confirmOrder);
+    </script>
+</body>
+</html>
